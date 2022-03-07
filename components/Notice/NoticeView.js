@@ -1,4 +1,5 @@
-import markdownToHtml from "../../lib/markdownToHtml";
+import ReactMarkdown from "react-markdown";
+import baseApiUrl from "../../utils/baseApiUrl";
 
 const NoticeView = ({ noticeView, content }) => {
   console.log("데이터: ", noticeView);
@@ -10,12 +11,19 @@ const NoticeView = ({ noticeView, content }) => {
             <p>{noticeView.data.attributes.title}</p>
           </div>
           {noticeView.data.attributes.content && (
-            <div
-              className="noticeContent"
-              dangerouslySetInnerHTML={{
-                __html: content,
+            <ReactMarkdown
+              components={{
+                img: ({ node, ...props }) => (
+                  <img
+                    style={{ maxWidth: "100%" }}
+                    {...props}
+                    src={baseApiUrl + node.properties.src}
+                  />
+                ),
               }}
-            ></div>
+            >
+              {noticeView.data.attributes.content}
+            </ReactMarkdown>
           )}
         </div>
       ) : (
