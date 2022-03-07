@@ -103,11 +103,11 @@ const Header = () => {
   return (
     <header>
       <Popover className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-[100%] mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <a href="#">
-                <span className="sr-only">Workflow</span>
+                <span className="sr-only">Cube Entertainment</span>
                 {/* <img
                   className="h-20 w-auto logo"
                   src={
