@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const NoticeList = ({ notice }) => {
-  console.log("데이터: ", notice.data.length);
+  //console.log("데이터: ", notice.data.length);
   return (
     <div className="notice bg-white rounded-lg shadow">
       <ul className="divide-y divide-gray-100">
