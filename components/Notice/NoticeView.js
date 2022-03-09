@@ -23,7 +23,7 @@ const NoticeView = ({ noticeView }) => {
                     <img
                       style={{ maxWidth: "100%" }}
                       {...props}
-                      src={baseApiUrl + node.properties.src}
+                      src={node.properties.src}
                     />
                   ),
                 }}
@@ -39,7 +39,7 @@ const NoticeView = ({ noticeView }) => {
                 {noticeUploadFile.map((file) => (
                   <li key={file.id}>
                     <Image
-                      src={baseApiUrl + file.attributes.url}
+                      src={file.attributes.url}
                       alt={file.attributes.alternativeText}
                       width={file.attributes.width}
                       height={file.attributes.height}
