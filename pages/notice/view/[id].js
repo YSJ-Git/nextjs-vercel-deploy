@@ -1,8 +1,13 @@
 import baseApiUrl from "../../../utils/baseApiUrl";
 import NoticeView from "../../../components/Notice/NoticeView";
 
-const NoticeId = ({ noticeView }) => {
-  return <NoticeView noticeView={noticeView}></NoticeView>;
+const NoticeId = ({ noticeView, noticeVisual }) => {
+  return (
+    <NoticeView
+      noticeView={noticeView}
+      noticeVisual={noticeVisual}
+    ></NoticeView>
+  );
 };
 
 export async function getServerSideProps(context) {
@@ -11,9 +16,16 @@ export async function getServerSideProps(context) {
   const noticeRes = await fetch(`${baseApiUrl}/api/notices/${id}?populate=*`);
   const noticeData = await noticeRes.json();
 
+  //Notice Visual
+  const noticeVisRes = await fetch(
+    `${baseApiUrl}/api/notice-visual?populate=*`
+  );
+  const noticeVisData = await noticeVisRes.json();
+
   return {
     props: {
       noticeView: noticeData,
+      noticeVisual: noticeVisData,
     },
   };
 }

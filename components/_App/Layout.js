@@ -11,9 +11,7 @@ const Layout = ({ children }) => {
       </Head>
 
       <Header></Header>
-      <div className="grid justify-items-stretch">
-        <div className="container justify-self-center">{children}</div>
-      </div>
+      <div className="grid justify-items-stretch">{children}</div>
     </>
   );
 };
