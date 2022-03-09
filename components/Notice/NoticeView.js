@@ -38,13 +38,9 @@ const NoticeView = ({ noticeView }) => {
               <ul>
                 {noticeUploadFile.map((file) => (
                   <li key={file.id}>
-                    <Image
-                      src={file.attributes.url}
-                      alt={file.attributes.alternativeText}
-                      width={file.attributes.width}
-                      height={file.attributes.height}
-                    />
-                    {file.attributes.caption}
+                    <a href={file.attributes.url} download>
+                      {file.attributes.caption}
+                    </a>
                   </li>
                 ))}
               </ul>
