@@ -1,3 +1,5 @@
+import Image from "next/image";
+import baseApiUrl from "../../utils/baseApiUrl";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
@@ -108,13 +110,11 @@ const Header = () => {
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <a href="#">
                 <span className="sr-only">Cube Entertainment</span>
-                {/* <img
-                  className="h-20 w-auto logo"
-                  src={
-                    "http://localhost:1337" +
-                    logoData.data.attributes.commonLogo.data[0].attributes.url
-                  }
-                  alt=""
+                {/* <Image
+                  src={baseApiUrl + logo.url}
+                  alt={logo.alternativeText}
+                  width={logo.width}
+                  height={logo.height}
                 /> */}
               </a>
             </div>

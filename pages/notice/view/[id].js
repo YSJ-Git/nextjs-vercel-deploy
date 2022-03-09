@@ -1,7 +1,7 @@
 import baseApiUrl from "../../../utils/baseApiUrl";
 import NoticeView from "../../../components/Notice/NoticeView";
 
-const NoticeId = ({ noticeView, cont }) => {
+const NoticeId = ({ noticeView }) => {
   return <NoticeView noticeView={noticeView}></NoticeView>;
 };
 
