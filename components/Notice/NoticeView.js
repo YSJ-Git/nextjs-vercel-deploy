@@ -1,6 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import baseApiUrl from "../../utils/baseApiUrl";
-import Image from "next/image";
+import fileDownload from "../../lib/fileDownload";
 
 const NoticeView = ({ noticeView }) => {
   const noticeTit = noticeView.data.attributes.title;
@@ -37,11 +36,14 @@ const NoticeView = ({ noticeView }) => {
             <div className="noticeFile">
               <ul>
                 {noticeUploadFile.map((file) => (
-                  <li key={file.id}>
-                    <a href={file.attributes.url} download>
-                      {file.attributes.caption}
-                    </a>
-                  </li>
+                  <button
+                    key={file.id}
+                    onClick={() =>
+                      fileDownload(file.attributes.url, file.attributes.caption)
+                    }
+                  >
+                    {file.attributes.caption}
+                  </button>
                 ))}
               </ul>
             </div>
