@@ -3,8 +3,10 @@ import fileDownload from "../../lib/fileDownload";
 import "moment/locale/ko";
 import moment from "moment";
 import Link from "next/link";
+import Image from "next/image";
 
-const NoticeView = ({ noticeView }) => {
+const NoticeView = ({ noticeView, noticeVisual }) => {
+  const visData = noticeVisual.data.attributes.noticeVisualImg.data.attributes;
   const noticeTit = noticeView.data.attributes.title;
   const noticeCont = noticeView.data.attributes.content;
   const publishedAt = noticeView.data.attributes.publishedAt;
@@ -12,10 +14,21 @@ const NoticeView = ({ noticeView }) => {
   const date = moment(publishedAt).format("YYYY-MM-DD");
   //console.log("데이터: ", noticeView);
   return (
-    <div className="noticeView">
-      <div className="container">
+    <div className="sub justify-self-center">
+      <div className="subVisual relative">
+        <p className="subVisText absolute left-2/4 top-2/4 -translate-y-1/2 -translate-x-1/2 z-10 text-white text-5xl drop-shadow-[5px_5px_5px_rgba(0,0,0,0.8)]">
+          Notice
+        </p>
+        <Image
+          src={visData.url}
+          alt={visData.alternativeText}
+          width={visData.width}
+          height={visData.height}
+        />
+      </div>
+      <div className="container my-0 mx-auto">
         {noticeView.data !== null ? (
-          <div className="noticeViewData">
+          <div className="noticeView">
             <div className="noticeTit">
               <p className="text-2xl font-bold text-center">{noticeTit}</p>
             </div>
