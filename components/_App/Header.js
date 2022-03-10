@@ -207,14 +207,12 @@ const Header = () => {
               >
                 CUBE
               </a>
-              <Link>
-                <a
-                  href="/notice"
-                  className="text-xl font-medium text-gray-500 hover:text-gray-900"
-                >
-                  Notice
-                </a>
-              </Link>
+              <a
+                href="#"
+                className="text-xl font-medium text-gray-500 hover:text-gray-900"
+              >
+                Notice
+              </a>
 
               {/*<Popover className="relative">
                 {({ open }) => (
