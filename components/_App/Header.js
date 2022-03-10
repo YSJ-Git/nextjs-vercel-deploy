@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import baseApiUrl from "../../utils/baseApiUrl";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
@@ -206,12 +207,14 @@ const Header = () => {
               >
                 CUBE
               </a>
-              <a
-                href="/notice"
-                className="text-xl font-medium text-gray-500 hover:text-gray-900"
-              >
-                Notice
-              </a>
+              <Link>
+                <a
+                  href="/notice"
+                  className="text-xl font-medium text-gray-500 hover:text-gray-900"
+                >
+                  Notice
+                </a>
+              </Link>
 
               {/*<Popover className="relative">
                 {({ open }) => (
