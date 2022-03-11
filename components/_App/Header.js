@@ -160,11 +160,8 @@ const Header = () => {
                         <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                             {solutions.map((item) => (
-                              <Link href={item.href}>
-                                <a
-                                  key={item.name}
-                                  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
-                                >
+                              <Link href={item.href} key={item.name}>
+                                <a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                   <item.icon
                                     className="flex-shrink-0 h-6 w-6 text-indigo-600"
                                     aria-hidden="true"
@@ -356,11 +353,8 @@ const Header = () => {
                 <div className="mt-6">
                   <nav className="grid gap-y-8">
                     {solutions.map((item) => (
-                      <Link href={item.href}>
-                        <a
-                          key={item.name}
-                          className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-                        >
+                      <Link href={item.href} key={item.name}>
+                        <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                           <item.icon
                             className="flex-shrink-0 h-6 w-6 text-indigo-600"
                             aria-hidden="true"
@@ -387,11 +381,8 @@ const Header = () => {
                     </a>
                   </Link>
                   {resources.map((item) => (
-                    <Link href={item.href}>
-                      <a
-                        key={item.name}
-                        className="text-base font-medium text-gray-900 hover:text-gray-700"
-                      >
+                    <Link href={item.href} key={item.name}>
+                      <a className="text-base font-medium text-gray-900 hover:text-gray-700">
                         {item.name}
                       </a>
                     </Link>
