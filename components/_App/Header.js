@@ -204,7 +204,7 @@ const Header = () => {
                   CUBE
                 </a>
               </Link>
-              <Link href="#">
+              <Link href="/notice">
                 <a className="text-xl font-medium text-gray-500 hover:text-gray-900">
                   Notice
                 </a>
