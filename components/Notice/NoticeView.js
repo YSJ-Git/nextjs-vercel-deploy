@@ -72,10 +72,12 @@ const NoticeView = ({ noticeView, noticeVisual }) => {
                 <p className="font-bold text-xl mb-2">첨부파일</p>
                 <ul>
                   {noticeUploadFile.map((file) => (
-                    <li className="border-b	border-color: rgb(125 211 252) border-solid">
+                    <li
+                      key={file.id}
+                      className="border-b	border-color: rgb(125 211 252) border-solid"
+                    >
                       <button
                         className="text-slate-500 py-2 hover:text-sky-500 pl-4"
-                        key={file.id}
                         onClick={() =>
                           fileDownload(
                             file.attributes.url,
