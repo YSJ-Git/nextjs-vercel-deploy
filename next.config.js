@@ -4,6 +4,10 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+  i18n: {
+    locales: ["ko"],
+    defaultLocale: "ko",
+  },
 };
 
 module.exports = nextConfig;

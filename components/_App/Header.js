@@ -106,18 +106,18 @@ const Header = () => {
   return (
     <header>
       <Popover className="relative bg-white">
-        <div className="max-w-[100%] mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="max-w-[86%] mx-auto px-4 sm:px-6">
+          <div className="flex justify-between items-center border-b-2 border-gray-100 py-3 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
-              <Link href="#">
+              <Link href="/">
                 <a>
                   <span className="sr-only">Cube Entertainment</span>
-                  {/* <Image
-                  src={baseApiUrl + logo.url}
-                  alt={logo.alternativeText}
-                  width={logo.width}
-                  height={logo.height}
-                /> */}
+                  <Image
+                    src="https://res.cloudinary.com/applotnwjd/image/upload/v1647102481/cube_logo_head_eafdbb87d8.png"
+                    alt="헤더로고"
+                    width="120"
+                    height="90"
+                  />
                 </a>
               </Link>
             </div>
@@ -178,7 +178,7 @@ const Header = () => {
                               </Link>
                             ))}
                           </div>
-                          <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                          {/* <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                             {callsToAction.map((item) => (
                               <div key={item.name} className="flow-root">
                                 <Link href={item.href}>
@@ -192,7 +192,7 @@ const Header = () => {
                                 </Link>
                               </div>
                             ))}
-                          </div>
+                          </div> */}
                         </div>
                       </Popover.Panel>
                     </Transition>
@@ -372,21 +372,26 @@ const Header = () => {
                 <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                   <Link href="#">
                     <a className="text-base font-medium text-gray-900 hover:text-gray-700">
-                      Pricing
+                      Music
                     </a>
                   </Link>
                   <Link href="#">
                     <a className="text-base font-medium text-gray-900 hover:text-gray-700">
-                      Docs
+                      CUBE
                     </a>
                   </Link>
-                  {resources.map((item) => (
+                  <Link href="/notice">
+                    <a className="text-base font-medium text-gray-900 hover:text-gray-700">
+                      Notice
+                    </a>
+                  </Link>
+                  {/* {resources.map((item) => (
                     <Link href={item.href} key={item.name}>
                       <a className="text-base font-medium text-gray-900 hover:text-gray-700">
                         {item.name}
                       </a>
                     </Link>
-                  ))}
+                  ))} */}
                 </div>
                 <div>
                   <Link href="#">

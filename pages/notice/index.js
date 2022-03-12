@@ -12,7 +12,7 @@ const Notice = ({ notice, noticeVisual, initialQuery }) => {
   const [pageMeta, setPageMeta] = useState(noticeData.meta.pagination);
   const [paginationNum, setPaginationNum] = useState([]);
   const printPaginationNum = 10;
-  console.log("data:: ", noticeData);
+  //console.log("data:: ", noticeData);
   //console.log("PAGE: ", page);
   //console.log("@@@", tmpPaginationNum);
 
