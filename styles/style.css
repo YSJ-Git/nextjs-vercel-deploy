@@ -1,0 +1,15 @@
+/* common */
+a {
+  display: block;
+}
+
+/* pagination */
+.pagination .on {
+  font-weight: 700;
+  color: #333;
+}
+
+/* markdown */
+.markdown u {
+  text-decoration: underline;
+}

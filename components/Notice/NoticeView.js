@@ -4,6 +4,8 @@ import "moment/locale/ko";
 import moment from "moment";
 import Link from "next/link";
 import Image from "next/image";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 const NoticeView = ({ noticeView, noticeVisual }) => {
   const visData = noticeVisual.data.attributes.noticeVisualImg.data.attributes;
@@ -14,30 +16,33 @@ const NoticeView = ({ noticeView, noticeVisual }) => {
   const date = moment(publishedAt).format("YYYY-MM-DD");
   //console.log("데이터: ", noticeView);
   return (
-    <div className="sub justify-self-center">
-      <div className="subVisual relative">
-        <p className="subVisText absolute left-2/4 top-2/4 -translate-y-1/2 -translate-x-1/2 z-10 text-white text-5xl drop-shadow-[5px_5px_5px_rgba(0,0,0,0.8)]">
-          Notice
+    <div className="sub justify-self-center w-full">
+      <div className="subVisual relative h-60 bg-sky-500">
+        <p className="subVisText absolute left-2/4 top-2/4 -translate-y-1/2 -translate-x-1/2 z-10 text-white text-center">
+          <span className="text-5xl font-bold block pb-4">Notice</span>
+          <span className="block text-lg font-semibold">
+            큐브엔터테인먼트의 소식을 전해드립니다.
+          </span>
         </p>
-        <Image
+        {/* <Image
           src={visData.url}
           alt={visData.alternativeText}
           width={visData.width}
           height={visData.height}
-        />
+        /> */}
       </div>
-      <div className="container my-0 mx-auto">
+      <div className="container xl mb-0 mt-16 mx-auto p-16">
         {noticeView.data !== null ? (
           <div className="noticeView">
             <div className="noticeTit">
-              <p className="text-2xl font-bold text-center">{noticeTit}</p>
+              <p className="text-4xl font-bold">{noticeTit}</p>
             </div>
             <div className="publishedAt">
-              <p className="text-center">{date}</p>
+              <p className="text-xl text-neutral-500 mt-8 mb-12">{date}</p>
             </div>
 
             {noticeCont && (
-              <div className="noticeCont">
+              <div className="noticeCont border border-slate-300 rounded-md p-16 mb-10">
                 <ReactMarkdown
                   components={{
                     img: ({ node, ...props }) => (
@@ -47,7 +52,15 @@ const NoticeView = ({ noticeView, noticeVisual }) => {
                         src={node.properties.src}
                       />
                     ),
+                    u: ({ node, ...props }) => (
+                      <span
+                        style={{ textDecoration: "underline" }}
+                        {...props}
+                      />
+                    ),
                   }}
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeRaw]}
                 >
                   {noticeCont}
                 </ReactMarkdown>
@@ -55,20 +68,24 @@ const NoticeView = ({ noticeView, noticeVisual }) => {
             )}
 
             {noticeUploadFile && (
-              <div className="noticeFile">
+              <div className="noticeFile border border-slate-300 rounded-md px-16 py-5">
+                <p className="font-bold text-xl mb-2">첨부파일</p>
                 <ul>
                   {noticeUploadFile.map((file) => (
-                    <button
-                      key={file.id}
-                      onClick={() =>
-                        fileDownload(
-                          file.attributes.url,
-                          file.attributes.caption
-                        )
-                      }
-                    >
-                      {file.attributes.caption}
-                    </button>
+                    <li className="border-b	border-color: rgb(125 211 252) border-solid">
+                      <button
+                        className="text-slate-500 py-2 hover:text-sky-500 pl-4"
+                        key={file.id}
+                        onClick={() =>
+                          fileDownload(
+                            file.attributes.url,
+                            file.attributes.caption
+                          )
+                        }
+                      >
+                        {file.attributes.caption}
+                      </button>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -77,9 +94,11 @@ const NoticeView = ({ noticeView, noticeVisual }) => {
         ) : (
           <div>뷰페이지 컨텐츠가 없습니다.</div>
         )}
-        <div className="goList">
+        <div className="goList mt-20 text-center">
           <Link href="/notice">
-            <a>목록</a>
+            <a className="inline-block border border-sky-500 text-sky-500 px-12 py-4 rounded-xl hover:bg-sky-500 hover:text-white font-semibold text-xl">
+              목록
+            </a>
           </Link>
         </div>
       </div>

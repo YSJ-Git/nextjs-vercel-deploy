@@ -206,7 +206,7 @@ const Header = () => {
               </Link>
               <Link href="/notice">
                 <a className="text-xl font-medium text-gray-500 hover:text-gray-900">
-                  Notice*
+                  Notice
                 </a>
               </Link>
 
