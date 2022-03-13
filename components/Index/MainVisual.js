@@ -13,9 +13,9 @@ import "swiper/css/thumbs";
 import SwiperCore, { FreeMode, Navigation, Thumbs, Autoplay } from "swiper";
 
 const MainVisual = ({ mainVisual }) => {
-  console.log("메인비주얼: ", mainVisual);
+  //console.log("메인비주얼: ", mainVisual);
   const mainVisualData = mainVisual.data;
-  console.log("메인비주얼2: ", mainVisualData);
+  //console.log("메인비주얼2: ", mainVisualData);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   SwiperCore.use([Autoplay]);
 
