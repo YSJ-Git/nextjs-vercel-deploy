@@ -29,12 +29,12 @@ const solutions = [
     href: "/gallery",
     icon: UsersIcon,
   },
-  {
-    name: "Albums",
-    description: "Browse the album.",
-    href: "#",
-    icon: MusicNoteIcon,
-  },
+  // {
+  //   name: "Albums",
+  //   description: "Browse the album.",
+  //   href: "#",
+  //   icon: MusicNoteIcon,
+  // },
   /*{
     name: "Security",
     description: "Your customers' data will be safe and secure.",

@@ -10,7 +10,7 @@ const SingerLink = ({ singerLink }) => {
   return (
     <div className="singer grid">
       <div className="singerBox mb-16">
-        <Link href="#">
+        <Link href="/gallery">
           <a className="grid grid-cols-2 gap-4">
             <div className="imgBox">
               <Image
@@ -32,7 +32,7 @@ const SingerLink = ({ singerLink }) => {
         </Link>
       </div>
       <div className="singerBox">
-        <Link href="#">
+        <Link href="/cube">
           <a className="grid grid-cols-2 gap-4">
             <div className="imgBox col-start-2">
               <Image

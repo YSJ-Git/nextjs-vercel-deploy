@@ -1,6 +1,5 @@
 import baseApiUrl from "../utils/baseApiUrl";
 import SingerLink from "../components/Index/SingerLink";
-import AlbumLink from "../components/Index/AlbumLink";
 import MainVisual from "../components/Index/MainVisual";
 
 export default function Home({ singerLink, mainVisual }) {
@@ -10,7 +9,6 @@ export default function Home({ singerLink, mainVisual }) {
         <MainVisual mainVisual={mainVisual} />
         <div className="container xl my-0 mx-auto py-7">
           <SingerLink singerLink={singerLink} />
-          <AlbumLink />
         </div>
       </main>
 
