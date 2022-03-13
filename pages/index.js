@@ -1,11 +1,13 @@
 import baseApiUrl from "../utils/baseApiUrl";
 import SingerLink from "../components/Index/SingerLink";
 import AlbumLink from "../components/Index/AlbumLink";
+import MainVisual from "../components/Index/MainVisual";
 
-export default function Home({ singerLink }) {
+export default function Home({ singerLink, mainVisual }) {
   return (
     <div>
       <main>
+        <MainVisual mainVisual={mainVisual} />
         <div className="container xl my-0 mx-auto py-7">
           <SingerLink singerLink={singerLink} />
           <AlbumLink />
@@ -22,9 +24,16 @@ export async function getStaticProps() {
   const singerLinkRes = await fetch(`${baseApiUrl}/api/singer-link?populate=*`);
   const singerLinkData = await singerLinkRes.json();
 
+  //MainVisual
+  const mainVisualRes = await fetch(
+    `${baseApiUrl}/api/main-visuals?populate=*`
+  );
+  const mainVisualData = await mainVisualRes.json();
+
   return {
     props: {
       singerLink: singerLinkData,
+      mainVisual: mainVisualData,
     },
   };
 }
