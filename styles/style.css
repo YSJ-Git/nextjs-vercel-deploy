@@ -110,6 +110,11 @@ a {
   left: 120px;
 }
 
+/* gallery */
+.gallery .galList:hover .galThumb {
+  transform: scale(1.2);
+}
+
 @media (max-width: 1280px) {
   .mySwiper2 .swiper-button-prev,
   .mySwiper2 .swiper-button-next {

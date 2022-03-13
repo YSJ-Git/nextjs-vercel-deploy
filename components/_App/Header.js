@@ -26,7 +26,7 @@ const solutions = [
   {
     name: "Artists",
     description: "Artists under Cube Entertainment.",
-    href: "#",
+    href: "/gallery",
     icon: UsersIcon,
   },
   {
