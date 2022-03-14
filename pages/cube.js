@@ -5,7 +5,7 @@ const CubePage = ({ cubeApi }) => {
   return <Cube cubeApi={cubeApi} />;
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Cube API
   const cubeRes = await fetch(`${baseApiUrl}/api/cube?populate=*`);
   const cubeData = await cubeRes.json();
