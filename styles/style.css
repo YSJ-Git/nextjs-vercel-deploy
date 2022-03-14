@@ -68,6 +68,7 @@ a {
 .swiper-slide {
   background-size: cover;
   background-position: center;
+  background: rgb(14 165 233 / 1);
 }
 
 .mySwiper2 {
@@ -116,8 +117,12 @@ a {
 }
 
 /* notice */
-.noticeView .noticeCont img {margin: 0 auto;}
-.noticeView .noticeCont p {margin-bottom:10px;}
+.noticeView .noticeCont img {
+  margin: 0 auto;
+}
+.noticeView .noticeCont p {
+  margin-bottom: 10px;
+}
 
 /* main notice latest */
 .noticeLatest > ul > li::after {
@@ -133,6 +138,32 @@ a {
 }
 .noticeLatest > ul > li:hover::after {
   width: 40%;
+}
+
+/* cube */
+.cube .cubeSwiper {
+  height: 420px;
+}
+
+.cube .cubeSwiper .swiper-button-prev,
+.cube .cubeSwiper .swiper-button-next {
+  color: #fff;
+}
+.cube .cubeSwiper .swiper-button-prev {
+  left: 30px;
+}
+
+.cube .cubeSwiper .swiper-button-next {
+  right: 30px;
+}
+.cube .cubeSwiper .swiper-pagination-progressbar {
+  height: 8px;
+  top: auto;
+  bottom: 0;
+}
+
+.cube .cubeSwiper .swiper-pagination-progressbar-fill {
+  background-color: rgb(24, 11, 136);
 }
 
 @media (max-width: 1280px) {
