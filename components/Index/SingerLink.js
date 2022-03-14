@@ -8,7 +8,7 @@ const SingerLink = ({ singerLink }) => {
   const albumImg = singerData.AlbumImg.data.attributes.formats.medium;
 
   return (
-    <div className="singer grid">
+    <div className="singer grid mb-16">
       <div className="singerBox mb-16">
         <Link href="/gallery">
           <a className="grid grid-cols-2 gap-4">

@@ -38,13 +38,13 @@ const NoticeList = ({ notice, noticeVisual }) => {
                         <div className="num text-xl inline-block pr-5 text-slate-400">
                           {key + 1}
                         </div>
-                        <div className="inline-block w-16 h-8 text-white bg-sky-500 text-center leading-8 rounded-lg mr-5">
+                        <div className="inline-block w-16 h-8 text-white bg-sky-500 text-center leading-8 rounded-lg mr-5 align-middle">
                           공지
                         </div>
-                        <div className="tit text-xl font-bold inline-block">
+                        <div className="w-5/6 tit text-xl font-bold inline-block text-ellipsis overflow-hidden truncate align-middle">
                           {dataList.attributes.title}
                         </div>
-                        <div className="created text-slate-400 inline-block float-right">
+                        <div className="created text-slate-400 inline-block float-right mt-1">
                           {moment(dataList.attributes.publishedAt).format(
                             "YYYY-MM-DD"
                           )}

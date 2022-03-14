@@ -115,6 +115,10 @@ a {
   transform: scale(1.2);
 }
 
+/* notice */
+.noticeView .noticeCont img {margin: 0 auto;}
+.noticeView .noticeCont p {margin-bottom:10px;}
+
 /* main notice latest */
 .noticeLatest > ul > li::after {
   content: "";

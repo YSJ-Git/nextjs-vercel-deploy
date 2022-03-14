@@ -34,7 +34,7 @@ const NoticeView = ({ noticeView, noticeVisual }) => {
         {noticeView.data !== null ? (
           <div className="noticeView">
             <div className="noticeTit">
-              <p className="text-4xl font-bold">{noticeTit}</p>
+              <p className="text-4xl font-bold leading-normal">{noticeTit}</p>
             </div>
             <div className="publishedAt">
               <p className="text-xl text-neutral-500 mt-8 mb-12">{date}</p>

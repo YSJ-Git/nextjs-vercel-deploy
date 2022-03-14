@@ -25,6 +25,7 @@ const MainVisual = ({ mainVisual }) => {
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
+          marginBottom: "10px",
         }}
         spaceBetween={10}
         navigation={true}
@@ -59,6 +60,9 @@ const MainVisual = ({ mainVisual }) => {
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
+        style={{
+          marginBottom: "50px",
+        }}
       >
         {mainVisual &&
           mainVisualData.map((list) => (

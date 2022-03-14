@@ -10,6 +10,7 @@ const NoticeLatest = ({ noticeLatest }) => {
   const latestData = noticeLatest.data;
   return (
     <div className="noticeLatest mt-14">
+      <p className="font-bold text-6xl pb-6 text-center">Notice</p>
       {latestData.length != 0 ? (
         <ul className="text-center">
           {latestData.map((item) => (
@@ -19,7 +20,7 @@ const NoticeLatest = ({ noticeLatest }) => {
             >
               <Link href={`/notice/view/${item.id}`}>
                 <a className="p-7">
-                  <p className="font-bold text-xl py-8">
+                  <p className="font-bold text-xl py-8 text-ellipsis overflow-hidden truncate">
                     {item.attributes.title}
                   </p>
                   <span className="text-gray-500">

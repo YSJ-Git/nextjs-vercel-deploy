@@ -301,7 +301,7 @@ const Header = () => {
                 )}
                                 </Popover>*/}
             </Popover.Group>
-            <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            {/*<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <Link href="#">
                 <a className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
                   Sign in
@@ -312,7 +312,7 @@ const Header = () => {
                   Sign up
                 </a>
               </Link>
-            </div>
+                              </div>*/}
           </div>
         </div>
 
@@ -393,7 +393,7 @@ const Header = () => {
                     </Link>
                   ))} */}
                 </div>
-                <div>
+                {/*<div>
                   <Link href="#">
                     <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
                       Sign up
@@ -407,7 +407,7 @@ const Header = () => {
                       </a>
                     </Link>
                   </p>
-                </div>
+                </div>*/}
               </div>
             </div>
           </Popover.Panel>
