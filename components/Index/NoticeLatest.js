@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 
 const NoticeLatest = ({ noticeLatest }) => {
-  console.log("최근: ", noticeLatest);
+  //console.log("최근: ", noticeLatest);
   const latestData = noticeLatest.data;
   return (
     <div className="noticeLatest mt-14">

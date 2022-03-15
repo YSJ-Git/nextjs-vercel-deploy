@@ -13,9 +13,13 @@ import CredentialsProvider from "next-auth/providers/credentials";
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers/oauth
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_ID,
+    //   clientSecret: process.env.GOOGLE_SECRET,
+    // }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
     }),
     /* EmailProvider({
          server: process.env.EMAIL_SERVER,
@@ -38,10 +42,7 @@ export default NextAuth({
     //   clientId: process.env.FACEBOOK_ID,
     //   clientSecret: process.env.FACEBOOK_SECRET,
     // }),
-    // GithubProvider({
-    //   clientId: process.env.GITHUB_ID,
-    //   clientSecret: process.env.GITHUB_SECRET,
-    // }),
+    
 
     // TwitterProvider({
     //   clientId: process.env.TWITTER_ID,
