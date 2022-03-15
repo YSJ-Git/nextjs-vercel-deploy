@@ -13,12 +13,11 @@ export default function ServerSidePage() {
     <>
       <h1>Server Side Rendering</h1>
       <p>
-        This page uses the universal <strong>getSession()</strong> method
-        in`&quot;`
+        This page uses the universal <strong>getSession()</strong> method in
         <strong>getServerSideProps()</strong>.
       </p>
       <p>
-        Using <strong>getSession()</strong> in`&quot;`
+        Using <strong>getSession()</strong> in
         <strong>getServerSideProps()</strong> is the recommended approach if you
         need to support Server Side Rendering with authentication.
       </p>
