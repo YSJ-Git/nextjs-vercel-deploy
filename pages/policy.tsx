@@ -2,7 +2,7 @@ export default function PolicyPage() {
   return (
     <>
       <p>
-        This is an example site to demonstrate how to use{" "}
+        This is an example site to demonstrate how to use`&quot;`
         <a href="https://next-auth.js.org">NextAuth.js</a> for authentication.
       </p>
       <h2>Terms of Service</h2>
