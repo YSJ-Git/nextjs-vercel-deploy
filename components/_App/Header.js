@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import baseApiUrl from "../../utils/baseApiUrl";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
@@ -103,6 +103,7 @@ const recentPosts = [
 ];
 
 const Header = () => {
+  const { data: session, status } = useSession();
   return (
     <header>
       <Popover className="relative bg-white">
@@ -134,7 +135,7 @@ const Header = () => {
                     <Popover.Button
                       className={classNames(
                         open ? "text-gray-900" : "text-gray-500",
-                        "group bg-white rounded-md inline-flex items-center text-xl font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        "group bg-white rounded-md inline-flex items-center text-xl font-medium hover:text-gray-900 hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       )}
                     >
                       <span>Music</span>
@@ -200,15 +201,42 @@ const Header = () => {
                 )}
               </Popover>
               <Link href="/cube">
-                <a className="text-xl font-medium text-gray-500 hover:text-gray-900">
+                <a className="text-xl font-medium text-gray-500 hover:text-gray-900 hover:underline">
                   CUBE
                 </a>
               </Link>
               <Link href="/notice">
-                <a className="text-xl font-medium text-gray-500 hover:text-gray-900">
+                <a className="text-xl font-medium text-gray-500 hover:text-gray-900 hover:underline">
                   Notice
                 </a>
               </Link>
+              {!session && (
+                <Link href="/signin">
+                  <a>
+                    <span className="text-xl align-middle inline-block font-medium text-gray-500 hover:text-gray-900 hover:underline">
+                      Login
+                    </span>
+                  </a>
+                </Link>
+              )}
+
+              {session?.user && (
+                <Link href="/signin">
+                  <a>
+                    <div className="align-middle inline-block h-[30px] pr-2">
+                      <Image
+                        src={session.user.image}
+                        alt="avatar image"
+                        width="30"
+                        height="30"
+                      />
+                    </div>
+                    <span className="align-middle inline-block font-medium text-gray-500 hover:text-gray-900 hover:underline">
+                      ({session.user.name})
+                    </span>
+                  </a>
+                </Link>
+              )}
 
               {/*<Popover className="relative">
                 {({ open }) => (
