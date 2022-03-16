@@ -1,4 +1,4 @@
-import Image from "next/Image";
+import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 // The approach used in this component shows how to build a sign in and sign out
