@@ -102,7 +102,7 @@ const Contact = () => {
                 <textarea
                   id="content"
                   name="content"
-                  className="border border-1 border-gray-400 align-middle w-10/12 rounded-lg p-3"
+                  className="border border-1 border-gray-400 align-middle w-10/12 rounded-lg p-3 h-32"
                   onChange={(e) => setContent(e.target.value)}
                 ></textarea>
               </li>

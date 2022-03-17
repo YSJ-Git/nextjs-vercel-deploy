@@ -210,6 +210,11 @@ const Header = () => {
                   Notice
                 </a>
               </Link>
+              <Link href="/contact">
+                <a className="text-xl font-medium text-gray-500 hover:text-gray-900 hover:underline">
+                  Contact
+                </a>
+              </Link>
               {!session && (
                 <Link href="/signin">
                   <a>
