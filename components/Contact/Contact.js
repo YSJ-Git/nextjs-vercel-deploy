@@ -22,7 +22,7 @@ const Contact = () => {
       email,
       content,
     };
-    console.log(data);
+    //console.log(data);
 
     fetch(`${baseApiUrl}/api/contacts`, {
       method: "POST",
@@ -39,13 +39,24 @@ const Contact = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
       });
 
     fetch("/api/contact", {
       method: "post",
       body: JSON.stringify(data),
-    }).then((res) => alert("접수되었습니다."));
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          alert("접수되었습니다.");
+          return router.push("/");
+        } else {
+          alert("접수를 실패하였습니다.");
+        }
+      })
+      .then((res) => {
+        console.log("!!!", res);
+      });
   };
 
   //   const confirm = () => {
