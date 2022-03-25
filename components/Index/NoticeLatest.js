@@ -1,9 +1,6 @@
 import Link from "next/link";
 import "moment/locale/ko";
 import moment from "moment";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
 
 const NoticeLatest = ({ noticeLatest }) => {
   //console.log("최근: ", noticeLatest);
