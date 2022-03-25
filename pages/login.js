@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import nookies from 'nookies'
-import LoginComponent from '../components/loginComponent'
+import LoginComponent from '../components/LoginComponent'
 import baseApiUrl from '../utils/baseApiUrl'
 
 const Login = () => {
