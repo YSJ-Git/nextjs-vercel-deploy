@@ -6,9 +6,10 @@
 // import ImageUpload from "../../../components/ImageUpload";
 // import Layout from "../../../components/_App/Layout";
 // import { ToastContainer } from "react-toastify";
-export default EditTest = () => {
+const EditTest = () => {
   return <div>EditTest</div>;
 };
+export default EditTest;
 // export default function EditNews({ sportNews }) {
 //   const [values, setValues] = useState({
 //     galTitle: sportNews.galTitle,
