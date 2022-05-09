@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -55,31 +54,6 @@ const Login = ({ user }) => {
 export const getServerSideProps = async (ctx) => {
   const cookies = nookies.get(ctx);
   let user = null;
-=======
-import { useRouter } from 'next/router'
-import axios from 'axios'
-import nookies from 'nookies'
-import LoginComponent from '../components/LoginComponent'
-import baseApiUrl from '../utils/baseApiUrl'
-
-const Login = () => {
-  const router = useRouter()
-  const goToRegister = () => {
-    router.push('/register')
-  }
-
-  return (
-    <div>
-      <LoginComponent />
-      <button onClick={goToRegister}>Register</button>
-    </div>
-  )
-}
-
-export const getServerSideProps = async ctx => {
-  const cookies = nookies.get(ctx)
-  let user = null
->>>>>>> a8d67ad582ea6fd89079231165718683294a283d
 
   if (cookies?.jwt) {
     try {
@@ -87,7 +61,6 @@ export const getServerSideProps = async ctx => {
         headers: {
           Authorization: `Bearer ${cookies.jwt}`,
         },
-<<<<<<< HEAD
       });
       user = data;
     } catch (e) {
@@ -110,27 +83,3 @@ export const getServerSideProps = async ctx => {
 };
 
 export default Login;
-=======
-      })
-      user = data
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
-  if (user) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/profile',
-      },
-    }
-  }
-
-  return {
-    props: {},
-  }
-}
-
-export default Login
->>>>>>> a8d67ad582ea6fd89079231165718683294a283d
