@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession, getSession } from "next-auth/react";
 
 // The approach used in this component shows how to build a sign in and sign out
 // component that works on pages which support both client and server side
@@ -30,35 +30,38 @@ export default function Sign() {
               className="inline-block py-3 px-5 border border-solid border-slate-400 rounded-lg font-bold hover:bg-zinc-600 hover:text-white"
             >
               <div className="inline-block align-middle pr-2">
-                <Image
+                {/* <Image
                   src="https://res.cloudinary.com/applotnwjd/image/upload/v1647429864/github_7774f7663a.png"
                   alt="깃허브 아이콘"
-                  width="30"
-                  height="30"
-                />
+                  width={30}
+                  height={30}
+                /> */}
               </div>
               <span className="inline-block align-middle">Github Login</span>
             </a>
-            <button onClick={() => signIn("github")}>깃헙로그인</button>
           </div>
         )}
-        {session?.user && (
+        {session?.session.user && (
           <div className="success text-center">
             <strong className="text-3xl block mb-5">Log-in Succeed</strong>
             <div className="bg-blue-300 p-5 inline-block rounded-xl mb-5">
               <div className="py-3">
-                <Image
+                {/* <Image
                   src={session.user.image}
                   alt="avatar image"
-                  width="90"
-                  height="90"
-                />
+                  width={90}
+                  height={90}
+                /> */}
               </div>
               <div>
-                <strong className="text-white">{session.user.name}</strong>
+                <strong className="text-white">
+                  {session.session.user.name}
+                </strong>
               </div>
               <div>
-                <strong className="text-white">{session.user.email}</strong>
+                <strong className="text-white">
+                  {session.session.user.email}
+                </strong>
               </div>
             </div>
             <div>

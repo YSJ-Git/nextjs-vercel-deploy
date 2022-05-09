@@ -7,6 +7,7 @@ import Auth0Provider from "next-auth/providers/auth0";
 import CredentialsProvider from "next-auth/providers/credentials";
 // import AppleProvider from "next-auth/providers/apple"
 // import EmailProvider from "next-auth/providers/email"
+import baseApiUrl from "../../../utils/baseApiUrl";
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -42,7 +43,6 @@ export default NextAuth({
     //   clientId: process.env.FACEBOOK_ID,
     //   clientSecret: process.env.FACEBOOK_SECRET,
     // }),
-    
 
     // TwitterProvider({
     //   clientId: process.env.TWITTER_ID,

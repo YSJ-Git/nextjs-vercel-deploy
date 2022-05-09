@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { Fragment } from "react";
+import { Fragment, useContext, useEffect } from "react";
+import { UserContext } from "../../store/users";
 import { Popover, Transition } from "@headlessui/react";
 import {
   BookmarkAltIcon,
@@ -104,6 +105,8 @@ const recentPosts = [
 
 const Header = () => {
   const { data: session, status } = useSession();
+  const context = useContext(UserContext);
+  console.log("Context::!! ", context);
   return (
     <header>
       <Popover className="relative bg-white">
@@ -216,7 +219,7 @@ const Header = () => {
                 </a>
               </Link>
               {!session && (
-                <Link href="/signin">
+                <Link href="/login">
                   <a>
                     <span className="text-xl align-middle inline-block font-medium text-gray-500 hover:text-gray-900 hover:underline">
                       Login
@@ -224,9 +227,8 @@ const Header = () => {
                   </a>
                 </Link>
               )}
-
               {session?.user && (
-                <Link href="/signin">
+                <Link href="/login">
                   <a>
                     <div className="align-middle inline-block h-[30px] pr-2">
                       <Image
@@ -242,7 +244,23 @@ const Header = () => {
                   </a>
                 </Link>
               )}
-
+              {context.user && (
+                <Link href="/cube">
+                  <a>
+                    {/* <div className="align-middle inline-block h-[30px] pr-2">
+                      <Image
+                        src={session.user.image}
+                        alt="avatar image"
+                        width="30"
+                        height="30"
+                      />
+                    </div> */}
+                    <span className="align-middle inline-block font-medium text-gray-500 hover:text-gray-900 hover:underline">
+                      ({context.user})
+                    </span>
+                  </a>
+                </Link>
+              )}
               {/*<Popover className="relative">
                 {({ open }) => (
                   <>
@@ -261,7 +279,6 @@ const Header = () => {
                         aria-hidden="true"
                       />
                     </Popover.Button>
-
                     <Transition
                       as={Fragment}
                       enter="transition ease-out duration-200"
