@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useRouter } from "next/router";
 import axios from "axios";
 import nookies from "nookies";
@@ -100,6 +101,40 @@ const Profile = (props) => {
 export const getServerSideProps = async (ctx) => {
   const cookies = nookies.get(ctx);
   let user = null;
+=======
+import { useRouter } from 'next/router'
+import axios from 'axios'
+import nookies from 'nookies'
+import baseApiUrl from '../utils/baseApiUrl'
+
+const Profile = props => {
+  const router = useRouter()
+  const {
+    user: { email, username },
+  } = props
+
+  const logout = async () => {
+    try {
+      await axios.get('/api/logout')
+      router.push('/')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  return (
+    <div>
+      <div>Username: {username}</div>
+      <div>Email: {email}</div>
+      <button onClick={logout}>Logout</button>
+    </div>
+  )
+}
+
+export const getServerSideProps = async ctx => {
+  const cookies = nookies.get(ctx)
+  let user = null
+>>>>>>> a8d67ad582ea6fd89079231165718683294a283d
 
   if (cookies?.jwt) {
     try {
@@ -107,6 +142,7 @@ export const getServerSideProps = async (ctx) => {
         headers: {
           Authorization: `Bearer ${cookies.jwt}`,
         },
+<<<<<<< HEAD
       });
       user = data;
     } catch (e) {
@@ -122,12 +158,36 @@ export const getServerSideProps = async (ctx) => {
   //     },
   //   };
   // }
+=======
+      })
+      user = data
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  if (!user) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/',
+      },
+    }
+  }
+>>>>>>> a8d67ad582ea6fd89079231165718683294a283d
 
   return {
     props: {
       user,
     },
+<<<<<<< HEAD
   };
 };
 
 export default Profile;
+=======
+  }
+}
+
+export default Profile
+>>>>>>> a8d67ad582ea6fd89079231165718683294a283d
