@@ -4,4 +4,4 @@ const Upload = () => {
   return <ImageUpload />;
 };
 
-export default ImageUpload;
+export default Upload;

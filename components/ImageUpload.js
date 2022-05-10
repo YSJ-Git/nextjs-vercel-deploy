@@ -1,5 +1,5 @@
 import { useState } from "react";
-import baseApiUrl from "../../utils/baseApiUrl";
+import baseApiUrl from "../utils/baseApiUrl";
 
 export default function ImageUpload({ sportNewsId, imageUploaded }) {
   const [image, setImage] = useState(null);
