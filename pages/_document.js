@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const APP_NAME = "Cube2";
+const APP_NAME = "Cube";
 const APP_DESCRIPTION = "Cube Entertainment2";
 
 export default class extends Document {

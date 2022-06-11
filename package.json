@@ -31,7 +31,8 @@
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.1",
-    "swiper": "^8.0.7"
+    "swiper": "^8.0.7",
+    "web-push": "^3.5.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

@@ -4,10 +4,10 @@ import moment from "moment";
 
 const Popup = ({ popup }) => {
   const now = moment().format("MMMM Do YYYY, h:mm:ss a");
-  console.log("NOW: ", now);
-  console.log("POPUP: ", popup);
+  //console.log("NOW: ", now);
+  //console.log("POPUP: ", popup);
   const popupData = popup.data.length !== 0 ? popup.data : null;
-  console.log("##", popupData);
+  //console.log("##", popupData);
   return (
     popupData !== null &&
     popupData.map((popupList) => (
